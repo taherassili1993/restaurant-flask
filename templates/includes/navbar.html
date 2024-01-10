@@ -1,0 +1,53 @@
+<style type="text/css">
+  nav a
+  {
+    color: white !important;
+  }
+</style>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #33AFFF !important; border-bottom: 2px solid #ccc !important;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/" style="margin-left: 100px; margin-top: 10px;">ASSILI Taher Restaurants</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Restaurants</a>
+        </li>
+
+        
+      </ul>
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        {% if not session['username'] %}
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Se connecter</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/signup">S'inscrire</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ajouter restaurant</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ session['username'] }}
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="nav-link" href="/logout" style="color: black !important;">Se deconnecter</a></li>
+            </ul>
+          </li>
+
+          {% endif %}
+        </ul>
+    </div>
+  </div>
+</nav>
