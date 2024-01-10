@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<style type="text/css">
+    #mon-restaurant
+    {
+        margin-top: 100px;
+        margin-bottom: 500px;
+    }
+
+    #mon-restaurant .form-input
+    {
+        margin-bottom: 20px;
+    }
+
+    #mon-restaurant label
+    {
+        width: 400px;
+    }
+
+    #mon-restaurant input
+    {
+        width: 500px;
+        height: 40px;
+        border: 1px solid #ccc;
+        padding-left: 10px;
+    }
+
+    #mon-restaurant input:focus
+    {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #999;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <form method="POST" action="" id="mon-restaurant">
+                <div class="form-input">
+                    <label>Nom de restaurant</label>
+                    <input type="text" name="nom" value="{{ restaurant[0] }}" required>
+                </div>
+
+                <div class="form-input">
+                    <label>Téléphone</label>
+                    <input type="text" name="telephone" value="{{ restaurant[1] }}" required>
+                </div>
+
+                <div class="form-input">
+                    <label>Addresse</label>
+                    <input type="text" name="addresse" value="{{ restaurant[2] }}" required>
+                </div>
+
+                <div class="">
+                    <button type="submit" class="btn btn-primary btn-sm">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

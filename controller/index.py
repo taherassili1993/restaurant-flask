@@ -12,7 +12,9 @@ def welcome():
     cursor = db_conn.cursor()
 
     sql = db.sql
+    sql_restaurant = db.sql_restaurant
  
     cursor.execute(sql)
+    cursor.execute(sql_restaurant)
 
     return render_template("index.html")
